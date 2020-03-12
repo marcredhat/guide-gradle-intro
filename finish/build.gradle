@@ -132,19 +132,19 @@ task openBrowser {
 // tag::opentestreport[]
 task openTestReport {
     description = 'Open browser to the test report'
-    doLast {
+    /*doLast {
         java.awt.Desktop.desktop.browse file("$buildDir/reports/it/index.html").toURI()
-    }
+    }*/
 }
 // end::opentestreport[]
 
 // tag::depends[]
 
 clean.dependsOn 'libertyStop'
-//check.dependsOn 'integrationTest'
-//integrationTest.dependsOn 'libertyStart'
-//integrationTest.finalizedBy 'libertyStop'
-//integrationTest.finalizedBy 'openTestReport'
+check.dependsOn 'integrationTest'
+integrationTest.dependsOn 'libertyStart'
+integrationTest.finalizedBy 'libertyStop'
+integrationTest.finalizedBy 'openTestReport'
 libertyPackage.dependsOn 'libertyStop'
 // end::depends[]
 // end::whole[]
