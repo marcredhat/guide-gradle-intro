@@ -97,6 +97,8 @@ war {
 }
 // end::war2[]
 
+
+/*
 // tag::tests[]
 test {
     reports.html.destination = file("$buildDir/reports/unit")
@@ -137,6 +139,7 @@ task openTestReport {
 // end::opentestreport[]
 
 // tag::depends[]
+*/
 clean.dependsOn 'libertyStop'
 check.dependsOn 'integrationTest'
 integrationTest.dependsOn 'libertyStart'
