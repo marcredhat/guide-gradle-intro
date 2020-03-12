@@ -98,7 +98,7 @@ war {
 // end::war2[]
 
 
-/*
+
 // tag::tests[]
 test {
     reports.html.destination = file("$buildDir/reports/unit")
@@ -122,10 +122,10 @@ task integrationTest(type: Test) {
 // tag::openbrowser[]
 task openBrowser {
     description = 'Open browser to http://localhost:8080/${warContext}'
-    doLast {
+    /*doLast {
         java.awt.Desktop.desktop.browse
             "http://localhost:${testServerHttpPort}/${appName}".toURI()
-    }
+    }*/
 }
 // end::openbrowser[]
 
@@ -139,7 +139,7 @@ task openTestReport {
 // end::opentestreport[]
 
 // tag::depends[]
-*/
+
 clean.dependsOn 'libertyStop'
 //check.dependsOn 'integrationTest'
 //integrationTest.dependsOn 'libertyStart'
